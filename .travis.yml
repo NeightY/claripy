@@ -4,5 +4,8 @@ sudo: required
 dist: trusty
 env:
   - ANGR_REPO=claripy
+  - ANGR_REPO=simuvex
+  - ANGR_REPO=angr
+  - ANGR_REPO=angr-doc
 install: (sudo apt-get update || true) && cd && git clone https://github.com/angr/angr-dev && cd angr-dev && ./setup.sh -i -w -v -e angr
 script: cd ~/angr-dev && source ~/.virtualenvs/angr/bin/activate && ./travis-test.sh
