@@ -1,0 +1,9 @@
+language: python
+python: 2.7
+sudo: required
+dist: trusty
+env:
+  - ANGR_REPO=claripy
+  - ANGR_REPO=simuvex
+install: (sudo apt-get update || true) && cd && git clone https://github.com/angr/angr-dev && cd angr-dev && ./setup.sh -i -w -e angr
+script: cd ~/angr-dev && source ~/.virtualenvs/angr/bin/activate && ./travis-test.sh
